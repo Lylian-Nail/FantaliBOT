@@ -1,5 +1,5 @@
 from discord.ext import commands
-from commands import misc,capitals
+from commands import misc,geography
 import os
 
 bot = commands.Bot(
@@ -7,6 +7,7 @@ bot = commands.Bot(
 )
 
 bot.add_cog(misc.Misc(bot))
-bot.add_cog(capitals.Capitals.LoadFromCSV(bot, 'src/datas/capitales.csv'))
+
+bot.add_cog(geography.Geography(bot, 'src/datas/capitales.csv', 'src/datas/drapeaux.csv'))
 
 bot.run(os.getenv("DISCORD_TOKEN"))
