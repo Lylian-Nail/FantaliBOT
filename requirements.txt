@@ -4,7 +4,7 @@ attrs==20.3.0
 chardet==3.0.4
 discord==1.0.1
 discord.py==1.6.0
-emoji-flags==0.1.0
+emoji-country-flag==1.2.3
 emojis==0.6.0
 idna==3.1
 multidict==5.1.0
