@@ -42,10 +42,3 @@ class Misc(commands.Cog):
             await message.channel.send(
                 'Fils de pute rends mon quad!'
             )
-        elif 'schmout' in message.content and self.schmout != 5:
-            mymy = await self.bot.fetch_user(261886941782343680)
-            if mymy is not None:
-                self.schmout += 1
-                await message.channel.send(
-                    f'Ah tu schmouts {mymy.mention}'
-                )
