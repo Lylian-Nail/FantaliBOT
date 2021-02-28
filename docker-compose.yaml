@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  
+  fantalibot:
+    image: fantalibot
+    build: ./
+    depends_on: 
+      - mariadb
+    networks:
+      - backend
+    restart: on-failure
+
+  mariadb:
+    image: mariadb
+    volumes:
+      - datas:/var/lib/mysql
+    networks:
+      - backend
+    environment:
+      MYSQL_USER: fantaliban
+      MYSQL_PASSWORD: fantalipassword
+      MYSQL_DATABASE: fantalibotdb
+      MYSQL_RANDOM_ROOT_PASSWORD: oui
+    healthcheck:
+      test: mysqladmin ping --silent
+      start_period: 15s
+      interval: 10s
+      timeout: 5s
+      retries: 2
+    restart: on-failure
+      
+networks:
+  backend:
+
+volumes:
+  datas:
