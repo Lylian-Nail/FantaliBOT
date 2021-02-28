@@ -88,7 +88,7 @@ class Geography(commands.Cog):
     def _check_answer(self, message_content, answers):
         for answer in answers:
             if answer in message_content:
-                return capital_name
+                return answer
         return False
 
     def load_from_csv(self, csv_file):
